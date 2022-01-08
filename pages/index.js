@@ -3,7 +3,7 @@ import { Component } from "react";
 import { attributes, react as HomeContent} from "../content/home.md";
 
 export default class Home extends Component {
-  redner() {
+  render() {
     let {title} = attributes;
     return (
       <>
