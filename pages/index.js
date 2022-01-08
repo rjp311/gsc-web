@@ -1,0 +1,21 @@
+import Head from "next/head";
+import { Component } from "react";
+import { attributes, react as HomeContent} from "../content/home.md";
+
+export default class Home extends Component {
+  redner() {
+    let {title} = attributes;
+    return (
+      <>
+        <Head>
+          <title>Home | Grantham Swimming Club</title>
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        </Head>
+        <article>
+          <h1>{title}</h1>
+          <HomeContent />
+        </article>
+      </>
+    )
+  }
+}
