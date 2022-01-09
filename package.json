@@ -2,7 +2,7 @@
   "name": "gsc-web",
   "version": "1.0.0",
   "description": "Website for Grantham Swimming Club",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -28,6 +28,11 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
-    "frontmatter-markdown-loader": "^3.6.3"
+    "autoprefixer": "^10.4.2",
+    "frontmatter-markdown-loader": "^3.6.3",
+    "postcss": "^8.4.5",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-nested": "^5.0.6",
+    "postcss-preset-env": "^7.2.0"
   }
 }
