@@ -10,9 +10,13 @@
   background-color: var(--primary);
   box-shadow: 0 2px 1px #000000aa;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   user-select: none;
   z-index: 10;
+}
+
+.logo {
+  margin: 0 2rem;
 }
 
 .logo img {
@@ -44,7 +48,7 @@
 
 .hero img {
   width: 100%;
-  height: 256px;
+  height: 384px;
   display: block;
   object-fit: cover;
   object-position: 50% 50%;
@@ -52,15 +56,13 @@
 }
 
 .navigation {
-  height: 48px;
+  height: 100%;
   width: 100%;
-  background-color: var(--secondary);
-  box-shadow: 0 1px 1px #000000aa;
 }
 
 .navigation ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   height: 100%;
   list-style-type: none;
@@ -74,21 +76,21 @@
   align-items: center;
 }
 
-.navigation ul li:hover {
-  background-color: var(--quaternary);
-}
-
-.navigation ul li:hover a {
-  color: var(--white);
-}
-
 .navigation ul li a {
   display: block;
   padding: 0 16px;
   text-decoration: none;
-  color: var(--text);
+  color: var(--white);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
+}
+
+.navigation ul li:hover {
+  background-color: var(--secondary);
+}
+
+.navigation ul li:hover a {
+  color: var(--text);
 }
 
 @media (max-width: 480px) {

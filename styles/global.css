@@ -6,11 +6,11 @@
   --tertiary: #1481ba;
   --quaternary: rgb(48, 56, 64);
   --text: #222222;
-  --white: #f8f8f8;
+  --white: #ffffff;
 }
 
 body{
-  background: linear-gradient(to top, #ccc, #fff);
+  background: var(--white);
   margin: unset;
   height: 100vh;
   width: 100vw;

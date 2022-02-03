@@ -10,23 +10,23 @@ export default function Header(props) {
         <div className={styles.logo}>
           <img src="/img/logo.jpg" />
         </div>
+        <nav className={styles.navigation}>
+          <ul>
+            {routes.map((link, index) => {
+              return (
+                <li key={index}>
+                  <Link href={link.path}>
+                    <a>{link.name}</a>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </nav>
       </div>
       <div className={styles.hero}>
         <img src="/img/pool1.jpg" />
       </div>
-      <nav className={styles.navigation}>
-        <ul>
-          {routes.map((link, index) => {
-            return (
-              <li key={index}>
-                <Link href={link.path}>
-                  <a>{link.name}</a>
-                </Link>
-              </li>
-            )
-          })}
-        </ul>
-      </nav>
     </header>
   )
 }
