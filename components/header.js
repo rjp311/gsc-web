@@ -1,9 +1,10 @@
 import styles from "../styles/components/header.module.css";
-import Image from "next/image";
 import Link from "next/link";
-import { routes } from "../utils/routes";
+// import { routes } from "../utils/routes";
 
 export default function Header(props) {
+  const {title, bg} = props;
+  console.log(title, bg);
   return (
     <header className={styles.wrapper}>
       <div className={styles.header}>
@@ -12,7 +13,7 @@ export default function Header(props) {
         </div>
         <nav className={styles.navigation}>
           <ul>
-            {routes.map((link, index) => {
+            {/* {routes.map((link, index) => {
               return (
                 <li key={index}>
                   <Link href={link.path}>
@@ -20,13 +21,11 @@ export default function Header(props) {
                   </Link>
                 </li>
               )
-            })}
+            })} */}
           </ul>
         </nav>
       </div>
-      <div className={styles.hero}>
-        <img src="/img/pool1.jpg" />
-      </div>
+      <div className={styles.hero} style={{ backgroundImage: `url('${bg ? bg : 'img/pool1.jpg'}')`}} />
     </header>
   )
 }

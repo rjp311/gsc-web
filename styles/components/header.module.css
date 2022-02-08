@@ -3,6 +3,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  border-bottom: 8px solid var(--secondary);
 }
 
 .header {
@@ -10,18 +11,20 @@
   background-color: var(--primary);
   box-shadow: 0 2px 1px #000000aa;
   display: flex;
-  justify-content: space-between;
   user-select: none;
   z-index: 10;
 }
 
 .logo {
-  margin: 0 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-grow: 1;
 }
 
 .logo img {
   width: 320px;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--primary);
   border-radius: 0 0 24px 24px;
   box-shadow: 0 2px 1px #000000aa
@@ -29,8 +32,14 @@
 
 .hero {
   width: 100%;
+  height: 320px;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
   position: relative;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   user-select: none;
 }
 
@@ -42,22 +51,21 @@
   width: 100%;
   height: 100%;
   display: inline-block;
-  background: linear-gradient(to bottom, var(--primary), var(--tertiary));
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
   filter: opacity(50%);
 }
 
-.hero img {
-  width: 100%;
-  height: 384px;
-  display: block;
-  object-fit: cover;
-  object-position: 50% 50%;
-  filter: brightness(0.75)
+.hero .title {
+  color: var(--white);
+  font-size: 2.5em;
+  text-shadow: 0px 0px 8px black;
+  z-index: 10;
 }
+
 
 .navigation {
   height: 100%;
-  width: 100%;
+  flex-grow: 5;
 }
 
 .navigation ul {
@@ -72,12 +80,13 @@
 
 .navigation ul li {
   height: 100%;
-  display: flex;
-  align-items: center;
+  
 }
 
 .navigation ul li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  height: 100%;
   padding: 0 16px;
   text-decoration: none;
   color: var(--white);
@@ -86,11 +95,17 @@
 }
 
 .navigation ul li:hover {
-  background-color: var(--secondary);
+  background-color: var(--white);
 }
 
 .navigation ul li:hover a {
   color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .navigation {
+    visibility: hidden;
+  }
 }
 
 @media (max-width: 480px) {
@@ -117,12 +132,12 @@
   }
 
   .hero {
-
+    position: relative;
+    height: 128px;
   }
 
-  .hero img {
-    position: relative;
-    /* top: -128px; */
-    height: 192px;
+  .hero .title {
+    font-size: 2em;
+    text-align: left !important;
   }
 }

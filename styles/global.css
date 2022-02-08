@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
   --primary: #001a54;
   --secondary: #f8a440;
-  --tertiary: #1481ba;
+  --tertiary: #0a1733;
   --quaternary: rgb(48, 56, 64);
   --text: #222222;
   --white: #ffffff;
@@ -11,8 +11,15 @@
 
 body{
   background: var(--white);
+  color: var(--text);
   margin: unset;
   height: 100vh;
   width: 100vw;
-  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+  font-family: 'Barlow', Arial, Helvetica, sans-serif;
+}
+
+.main {
+  max-width: 1280px;
+  margin: auto;
+  padding: 2rem 4rem;
 }
