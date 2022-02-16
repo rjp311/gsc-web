@@ -15,7 +15,7 @@ export default function BuilderPage({ page }) {
       </Head>
       <Header title={page.title}></Header>
       <article className="main">
-        {page.builder.map((item, index) => {
+        {page?.builder?.map((item, index) => {
           return <Builder key={index} type={item.type} item={item} />
         })}
       </article>
@@ -35,7 +35,7 @@ function getBySlug(dir, slug) {
 
 export async function getStaticPaths() {
   const dirents = fs.readdirSync("content/pages", { withFileTypes: true });
-  const paths = dirents.filter(dirent => dirent.isFile()).map(dirent => ({ params: { page: dirent.name.replace(/\.md$/, "") }}));
+  const paths = dirents?.filter(dirent => dirent.isFile())?.map(dirent => ({ params: { page: dirent.name.replace(/\.md$/, "") }}));
 
   return {
     paths,
