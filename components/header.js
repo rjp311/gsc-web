@@ -8,22 +8,24 @@ export default function Header(props) {
   return (
     <header className={styles.wrapper}>
       <div className={styles.header}>
-        <div className={styles.logo}>
-          <img src="/img/logo.jpg" />
+        <div className={styles.content}>
+          <div className={styles.logo}>
+            <img src="/img/logo.jpg" />
+          </div>
+          <nav className={styles.navigation}>
+            <ul>
+              {/* {routes.map((link, index) => {
+                return (
+                  <li key={index}>
+                    <Link href={link.path}>
+                      <a>{link.name}</a>
+                    </Link>
+                  </li>
+                )
+              })} */}
+            </ul>
+          </nav>
         </div>
-        <nav className={styles.navigation}>
-          <ul>
-            {/* {routes.map((link, index) => {
-              return (
-                <li key={index}>
-                  <Link href={link.path}>
-                    <a>{link.name}</a>
-                  </Link>
-                </li>
-              )
-            })} */}
-          </ul>
-        </nav>
       </div>
       <div className={styles.hero} style={{ backgroundImage: `url('${bg ? bg : 'img/pool1.jpg'}')`}} />
     </header>
