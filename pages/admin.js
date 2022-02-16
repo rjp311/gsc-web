@@ -10,7 +10,7 @@ const CMS = dynamic(
     }),
     {
       ssr: false,
-      loading: () => <h1>Loading</h1>,
+      loading: () => <h1 style={{position: 'absolute', textAlign: 'center', width: '100%', top: '45%', fontWeight: '600'}}>Loading...</h1>,
     }
 );
 
