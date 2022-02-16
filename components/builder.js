@@ -1,9 +1,10 @@
+import styles from "../styles/components/builder.module.css";
 import ReactMarkdown from "react-markdown";
 
 function Image({ item }) {
   return (
-    <div style={{ backgroundImage: `url('${item.image})`}}>
-      <h3>{item.title}</h3>
+    <div className={styles.image} style={{ backgroundImage: `url('${item.image}')`}}>
+      {item.title ? <h3>{item.title}</h3> :  <></> }
     </div>
   );
 }
