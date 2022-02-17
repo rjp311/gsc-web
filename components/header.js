@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Header(props) {
   const {title, bg} = props;
-  console.log(title, bg);
+  // console.log(title, bg);
   return (
     <header className={styles.wrapper}>
       <div className={styles.header}>

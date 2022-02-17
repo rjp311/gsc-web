@@ -9,13 +9,13 @@ module.exports = {
     )
     return cfg;
   },
-  exportPathMap: async function (defaultPathMap, {dev, dir, outDir, distDir, buildId }) {
-    const pathMap = {
-      "/": {page: "/home"}
-    }
+  // exportPathMap: async function (defaultPathMap, {dev, dir, outDir, distDir, buildId }) {
+  //   const pathMap = {
+  //     "/": {page: "/home"}
+  //   }
 
-    return pathMap;
-  },
+  //   return pathMap;
+  // },
   redirects: async function () {
     let redirs = [
       {

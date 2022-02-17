@@ -11,7 +11,7 @@ export default function BuilderPage({ page }) {
   return (
     <>
       <Head>
-        <title>{page.title} | Grantham Swimming Club</title>
+        <title>{page.title ? `${page.title} |` : ''} Grantham Swimming Club</title>
       </Head>
       <Header title={page.title}></Header>
       <article className="main">
