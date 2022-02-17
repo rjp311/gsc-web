@@ -1,0 +1,6 @@
+.image {
+  height: auto;
+  min-height: 384px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
