@@ -106,7 +106,7 @@
 .overlay {
   position: absolute;
   width: 100%;
-  top: 64px;
+  margin-top: 64px;
   height: 384px;
   display: flex;
   justify-content: flex-start;
@@ -126,8 +126,13 @@
 }
 
 @media (max-width: 1024px) {
+  .header {
+    position: fixed;
+    width: 100%;
+  }
+
   .navigation {
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,14 +168,34 @@
   .burger {
     display: block;
     position: absolute;
-    right: 16px;
+    right: 48px;
     top: 16px;
     z-index: 10;
+  }
+
+  .burger.active {
+    position: fixed;
+  }
+
+  .burger .icon {
+    position: absolute;
+    transition: 0.5s ease;
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  .burger .icon.active {
+    transform: rotate(0deg);
+    opacity: 1;
   }
 
   .burger .icon svg {
     height: 32px;
     width: 32px;
+  }
+
+  .hero, .overlay {
+    margin-top: 64px;
   }
 }
 
