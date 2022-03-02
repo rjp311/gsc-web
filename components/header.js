@@ -1,7 +1,7 @@
 import styles from "../styles/components/header.module.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { routes } from "../utils/routes";
 import { Component, useState } from "react";
 
@@ -26,9 +26,12 @@ export default function Header(props) {
               </a>
             </Link>
           </div>
-          <div className={styles.burger} onClick={() => toggleNavigation()}>
-            <div className={styles.icon}>
+          <div className={`${styles.burger} ${active ? styles.active : ''}`} onClick={() => toggleNavigation()}>
+            <div className={`${styles.icon} ${!active ? styles.active : ''}`}>
               <FontAwesomeIcon icon={faBars} />
+            </div>
+            <div className={`${styles.icon} ${active ? styles.active : ''}`}>
+              <FontAwesomeIcon icon={faXmark} />
             </div>
           </div>
           <nav className={`${styles.navigation} ${active ? styles.active : ''}`}>
