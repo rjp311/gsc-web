@@ -11,9 +11,13 @@ module.exports = {
   public_folder: "img",
   publish_mode: "editorial_workflow",
   collections: [
+    // {
+    //   name: "Home",
+    //   label: "Home",
+    // },
     {
       name: "Pages",
-      label: "Page",
+      label: "Pages",
       label_singular: "Page",
       editor: { preview: false },
       folder: "content/pages",
@@ -23,24 +27,30 @@ module.exports = {
       format: "yaml-frontmatter",
       fields: [
         {
-          label: "Title",
-          name: "title",
+          label: "Name",
+          name: "name",
           widget: "string",
           required: true
         },
         {
-          label: "Builder",
-          name: "builder",
+          label: "Title",
+          name: "title",
+          widget: "string",
+          required: false
+        },
+        {
+          label: "Content",
+          name: "content",
           widget: "list",
           types: [
             {
-              label: "Content",
-              name: "content",
+              label: "Text",
+              name: "text",
               widget: "object",
               fields: [
                 {
-                  label: "Content",
-                  name: "content",
+                  label: "Text",
+                  name: "text",
                   widget: "markdown",
                   required: true,
                 },

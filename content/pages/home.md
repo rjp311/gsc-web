@@ -1,10 +1,18 @@
 ---
-title: Home
-builder:
-  - type: content
-    content: >-
-      # Welcome to Grantham Swimming Club
+name: Home
+title: Welcome
+content:
+  - type: text
+    text: >-
+      **Grantham Swimming Club** is a professional, high performing swimming
+      club who work together for everyone to achieve their full potential.
 
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      As [4 times Lincolnshire County Champions](http://www.granthammatters.co.uk/grantham-swimmers-crowned-county-champions-third-year-row/) (2016, 2017, 2018 and joint champions in 2020) we are proud to call home the [](https://www.leisuresk.co.uk/grantham-mere-leisure-centre)[Meres Leisure Centre](https://www.leisuresk.co.uk/grantham-mere-leisure-centre) in Grantham. We are also affiliated to the East Midlands Region of Swim England, with swimmers competing through to International level.
+
+
+      Thank you for visiting our website - we hope you find it useful in learning more about the Club. Please do not hesitate to get in contact on [granthamsc@gmail.com](mailto:granthamsc@gmail.com) if you would like to find out more.
+
+
+      **Swim Fast!**
 ---

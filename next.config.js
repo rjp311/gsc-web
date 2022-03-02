@@ -19,8 +19,8 @@ module.exports = {
   redirects: async function () {
     let redirs = [
       {
-        source: "/",
-        destination: "/home",
+        source: "/home",
+        destination: "/",
         permanent: true
       }
     ]

@@ -3,7 +3,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  border-bottom: 32px solid var(--tertiary);
+  /* border-bottom: 32px solid var(--tertiary); */
 }
 
 .header {
@@ -25,28 +25,69 @@
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
+  margin: 0 2rem 0 2rem;
 }
 
 .logo img {
   width: 320px;
-  padding: 0.5rem 1rem;
-  margin: 0 2rem 0 2rem;
+  padding: 0 0.5rem;
   background-color: var(--primary);
   border-radius: 0 0 24px 24px;
   box-shadow: 0 2px 1px #000000aa
 }
 
+.navigation {
+  height: 100%;
+  width: 100%;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul li {
+  height: 100%;
+}
+
+.navigation ul li a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 16px;
+  text-decoration: underline;
+  text-decoration-color: var(--secondary);
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.navigation ul li:hover {
+  background-color: var(--white);
+}
+
+.navigation ul li:hover a {
+  color: var(--text);
+}
+
+.burger {
+  display: none;
+}
+
 .hero {
   width: 100%;
-  height: 256px;
+  height: 384px;
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
+  -webkit-mask-image: linear-gradient(white 50%, transparent);
+  -webkit-mask-repeat: space;
   box-shadow: inset 0 -16px 64px var(--tertiary);
 }
 
@@ -62,88 +103,125 @@
   filter: opacity(50%);
 }
 
-.hero .title {
-  color: var(--white);
-  font-size: 2.5em;
-  text-shadow: 0px 0px 8px black;
-  z-index: 10;
-}
-
-
-.navigation {
-  height: 100%;
-}
-
-.navigation ul {
+.overlay {
+  position: absolute;
+  width: 100%;
+  top: 64px;
+  height: 384px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  justify-content: flex-start;
+  align-items: flex-end;
+  user-select: none;
 }
 
-.navigation ul li {
-  height: 100%;
-  
-}
-
-.navigation ul li a {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 16px;
-  text-decoration: none;
-  color: var(--white);
-  font-size: 24px;
-  font-weight: 600;
-}
-
-.navigation ul li:hover {
-  background-color: var(--white);
-}
-
-.navigation ul li:hover a {
+.overlay .title {
   color: var(--text);
+  font-size: 2.5em;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  bottom: 2rem;
 }
 
 @media (max-width: 1024px) {
   .navigation {
-    visibility: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    transition: 0.25s ease;
+    pointer-events: none;
+    backdrop-filter: blur(4px) brightness(25%);
+    /* display: none; */
+  }
+
+  .navigation.active {
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  .navigation ul {
+    display: block;
+    height: unset;
+    margin: 0;
+  }
+
+  .navigation ul li {
+    height: unset;
+  }
+
+  .navigation ul li a {
+    justify-content: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .burger {
+    display: block;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 10;
+  }
+
+  .burger .icon svg {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero, .overlay {
+    height: 320px;
   }
 }
 
 @media (max-width: 480px) {
-  .header {
-    background-color: transparent;
-    height: unset;
+  .logo {
+    margin: 0;
+    justify-content: flex-start;
   }
 
-  .logo {
-    width: 100%;
-    height: 128px;
-    background-color: var(--primary);
-    display: flex;
-    justify-content: center;
-    top: 0;
+  .logo a {
+    display: inherit;
   }
 
   .logo img {
+    height: auto;
+    width: calc(100% - 64px);
     padding: 0;
-    width: auto;
-    height: 128px;
-    border-radius: 0;
-    box-shadow: none;
+    border-radius: 0 0 24px 0;
   }
 
-  .hero {
-    position: relative;
-    height: 128px;
+  .hero, .overlay {
+    height: 256px;
   }
 
-  .hero .title {
+  .overlay .title {
     font-size: 2em;
-    text-align: left !important;
+  }
+}
+
+/** Animations **/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
   }
 }

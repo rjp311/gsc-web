@@ -1,33 +1,33 @@
-import styles from "../styles/components/builder.module.css";
+import styles from "../styles/components/content.module.css";
 import ReactMarkdown from "react-markdown";
 
 function Image({ item }) {
   return (
     <div className={styles.image} style={{ backgroundImage: `url('${item.image}')`}}>
-      {item.title ? <h3>{item.title}</h3> :  <></> }
+      {item.text ? <h3>{item.text}</h3> :  <></> }
     </div>
   );
 }
 
-function Content({ item }) {
+function Text({ item }) {
   return (
     <div>
-      <ReactMarkdown children={item.content} />
+      <ReactMarkdown children={item.text} />
     </div>
   );
 }
 
 function CTA({ item }) {
-  return <a href={item.link}>{item.title}</a>;
+  return <a href={item.link}>{item.text}</a>;
 }
 
 const components = {
-  content: Content,
+  text: Text,
   photo: Image,
   cta: CTA
 }
 
-export default function Builder(props) {
+export default function Content(props) {
   const Component = components[props.type];
   return <Component item={props.item} />;
 }
