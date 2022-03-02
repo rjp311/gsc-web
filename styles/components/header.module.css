@@ -136,7 +136,7 @@
     opacity: 0;
     transition: 0.25s ease;
     pointer-events: none;
-    backdrop-filter: blur(4px) brightness(25%);
+    backdrop-filter: blur(2px) brightness(25%);
     /* display: none; */
   }
 
@@ -182,19 +182,13 @@
 
 @media (max-width: 480px) {
   .logo {
-    margin: 0;
-    justify-content: flex-start;
-  }
-
-  .logo a {
-    display: inherit;
+    margin: auto;
+    width: calc(100% - 128px);
   }
 
   .logo img {
-    height: auto;
-    width: calc(100% - 64px);
-    padding: 0;
-    border-radius: 0 0 24px 0;
+    width: 100%;
+    padding: 0.5rem 0 0 0;
   }
 
   .hero, .overlay {
@@ -203,6 +197,12 @@
 
   .overlay .title {
     font-size: 2em;
+  }
+}
+
+@media (max-width: 280px) {
+  .logo img {
+    padding: 0.75rem 0 0 0;
   }
 }
 
