@@ -7,7 +7,7 @@ import Head from "next/head";
 import Header from "../components/header";
 
 
-export default function ContentPage({ page }) {
+export default function Index({ page }) {
   return (
     <>
       <Head>
@@ -33,18 +33,8 @@ function getBySlug(dir, slug) {
   return data;
 }
 
-export async function getStaticPaths() {
-  const dirents = fs.readdirSync("content/pages", { withFileTypes: true });
-  const paths = dirents?.filter(dirent => dirent.isFile())?.map(dirent => ({ params: { page: dirent.name.replace(/\.md$/, "") }}));
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
 export async function getStaticProps({ params }) {
-  const data = getBySlug("content/pages", params.page);
+  const data = getBySlug("content/pages", 'home');
   if (!data) {
     return {
       notFound: true,
